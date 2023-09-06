@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card } from "../../Components/Card/Card";
+import { ProductDetail } from "../../Components/ProductDeatil/ProductDetail";
 
 function Home() {
   const [items, setItems] = useState(null);
@@ -18,7 +19,7 @@ function Home() {
           ))
         }
       </div>
-
+      <ProductDetail/>
     </div>
   )
 }

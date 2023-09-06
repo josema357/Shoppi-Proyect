@@ -1,11 +1,27 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const ShoppingContext = createContext();
+export const ShoppingContext = createContext();
 
 // eslint-disable-next-line react/prop-types
-export const ShoppingContextProvider = ({children}) => {
+export const ShoppingProvider = ({children}) => {
+    const [count, setCount] = useState(0);
+    const [detailOpen, setDetailOpen] = useState(false);
+    const [productToShow, setProductToShow] = useState({
+        title:'',
+        price:'',
+        description:'',
+        images:[],
+    });
     return (
-        <ShoppingContext.Provider>
+        <ShoppingContext.Provider 
+            value={{ 
+                count, 
+                setCount,
+                detailOpen,
+                setDetailOpen,
+                productToShow,
+                setProductToShow,
+            }}>
             {children}
         </ShoppingContext.Provider>
     )
