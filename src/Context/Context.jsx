@@ -12,6 +12,9 @@ export const ShoppingProvider = ({children}) => {
         description:'',
         images:[],
     });
+    const [shoppingCart, setShoppingCart] = useState([]);
+    const [checkoutSideOpen, setCheckoutSideOpen] = useState(false);
+
     return (
         <ShoppingContext.Provider 
             value={{ 
@@ -21,6 +24,10 @@ export const ShoppingProvider = ({children}) => {
                 setDetailOpen,
                 productToShow,
                 setProductToShow,
+                shoppingCart,
+                setShoppingCart,
+                checkoutSideOpen,
+                setCheckoutSideOpen
             }}>
             {children}
         </ShoppingContext.Provider>
