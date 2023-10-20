@@ -11,7 +11,7 @@ function Home() {
   },[])
   return (
     <div>
-      Home
+      <p className="w-full text-center pb-4 font-light text-lg">Home</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {
           items?.map((item)=>(

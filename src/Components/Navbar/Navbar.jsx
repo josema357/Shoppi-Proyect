@@ -6,6 +6,12 @@ import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 function Navbar() {
     const context = useContext(ShoppingContext);
     const activeStyle='underline underline-offset-4';
+    /**
+     * Esta funcion muestra u oculta el checkout
+     */
+    const handleCart=()=>{
+        context.setCheckoutSideOpen(!context.checkoutSideOpen);
+    }
     
   return (
     <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light top-0 bg-white border-b border-b-slate-200">
@@ -13,7 +19,7 @@ function Navbar() {
             <li className="font-semibold text-lg">
                 <NavLink
                     to='/'>
-                        Shopi
+                        Shoppi
                 </NavLink>
             </li>
             <li>
@@ -102,7 +108,7 @@ function Navbar() {
                         Sign in
                 </NavLink>
             </li>
-            <li className="flex items-center">
+            <li className="flex items-center cursor-pointer" onClick={()=>handleCart()}>
                 <ShoppingCartIcon className="h-6 w-6 text-black"/> {context.count}
             </li>
         </ul>
