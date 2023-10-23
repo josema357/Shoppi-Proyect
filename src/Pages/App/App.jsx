@@ -13,6 +13,7 @@ import { CheckoutSideMenu } from '../../Components/CheckoutSideMenu/CheckoutSide
 const AppRoutes=()=>{
   let routes = useRoutes([
     { path: '/', element: <Home/> },
+    { path: '/Shoppi-Proyect', element: <Home/> },
     { path: '/:category', element: <Home/> },
     { path: '/my-account', element: <MyAccount/> },
     { path: '/my-order', element: <MyOrder/> },
