@@ -2,6 +2,26 @@ import { createContext, useEffect, useState } from "react";
 
 export const ShoppingContext = createContext();
 
+//Inicializando el LocalStorage
+export const initializeLocalStorage=()=>{
+    const accountInLocal=localStorage.getItem('account');
+    const signOutInLocal=localStorage.getItem('sign-out');
+    let parsedAccount;
+    let parsedSignOut;
+    if(!accountInLocal){
+        localStorage.setItem('account',JSON.stringify({}));
+        parsedAccount={};
+    }else{
+        parsedAccount =JSON.parse(accountInLocal);
+    }
+    if(!signOutInLocal){
+        localStorage.setItem('sign-out',JSON.stringify(false));
+        parsedSignOut=false;
+    }else{
+        parsedSignOut = JSON.parse(signOutInLocal);
+    }
+}
+
 // eslint-disable-next-line react/prop-types
 export const ShoppingProvider = ({children}) => {
     //Contador del carrito
@@ -29,6 +49,10 @@ export const ShoppingProvider = ({children}) => {
     const [filteredItems, setFilteredItems] = useState(null);
     //Obtener productos por categoria
     const [searchByCategory, setSearchByCategory] = useState(null);
+    //Cuenta
+    const [account, setAccount]=useState({});
+    //Inicio de sesion
+    const [signOut, setSignOut]=useState(false);
 
     useEffect(()=>{
         fetch('https://api.escuelajs.co/api/v1/products')
@@ -117,7 +141,11 @@ export const ShoppingProvider = ({children}) => {
                 setSearchByTitle,
                 filteredItems,
                 searchByCategory,
-                setSearchByCategory
+                setSearchByCategory,
+                account,
+                setAccount,
+                signOut,
+                setSignOut
             }}>
             {children}
         </ShoppingContext.Provider>

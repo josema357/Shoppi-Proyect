@@ -9,6 +9,7 @@ import './App.css'
 import { Layout } from '../../Components/Layout/Layout';
 import { ShoppingProvider } from '../../Context/Context';
 import { CheckoutSideMenu } from '../../Components/CheckoutSideMenu/CheckoutSideMenu';
+import { SignIn } from '../SignIn/SignIn';
 
 const AppRoutes=()=>{
   let routes = useRoutes([
@@ -20,6 +21,7 @@ const AppRoutes=()=>{
     { path: '/my-orders', element: <MyOrders/> },
     { path: '/my-orders/last', element: <MyOrder/> },
     { path: '/my-orders/:id', element: <MyOrder/> },
+    { path: '/sign-in', element: <SignIn/> },
     { path: '/*', element: <NotFound/> },
   ])
   return routes;
