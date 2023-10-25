@@ -10,6 +10,7 @@ function Navbar() {
   const signOut = localStorage.getItem("sign-out");
   const parsedSignOut = JSON.parse(signOut);
   const isUserSignOut = context.signOut || parsedSignOut;
+  console.log(isUserSignOut)
   /**
    * Esta funcion muestra u oculta el checkout
    */
