@@ -3,3 +3,15 @@
     height: calc(100vh - 69px);
     top: 69px;
 }
+.content-image{
+    display: flex;
+    justify-content: center;
+}
+.image-detail{
+    max-width: 340px;
+}
+@media (max-width:640px){
+    .product-detail{
+        width: 100%;
+    }
+}

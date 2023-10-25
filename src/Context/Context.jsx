@@ -35,7 +35,7 @@ export const ShoppingProvider = ({children}) => {
     //Cuenta
     const [account, setAccount]=useState({});
     //Inicio de sesion
-    const [signOut, setSignOut]=useState(false);
+    const [signOut, setSignOut]=useState(true);
 
     useEffect(()=>{
         fetch('https://api.escuelajs.co/api/v1/products')

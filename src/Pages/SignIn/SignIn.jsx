@@ -3,17 +3,16 @@ import { ShoppingContext } from "../../Context/Context";
 import { Login } from "../../Components/Login/Login";
 import { CreateUser } from "../../Components/CreateUser/CreateUser";
 import { Navigate } from "react-router-dom";
+import { checkIfHasAccount } from "../../Utils/checkIfHasAccount";
 
 function SignIn() {
   const context = useContext(ShoppingContext);
   const [view, setView] = useState("user-info");
+  //Tiene una cuenta 
+  const returnedObject = checkIfHasAccount(context.account);
+  const hasUserAnAccount=returnedObject.hasUserAnAccount;
   //Cuenta
-  const account = localStorage.getItem("account");
-  const parsedAccount = JSON.parse(account) || {};
-  //Tiene una cuenta
-  const hasUserAnAccount =
-    Object.keys(parsedAccount).length > 0 ||
-    Object.keys(context.account).length > 0;
+  const parsedAccount=returnedObject.parsedAccount;
   /**
    * Actualiza el local Storage y el estado global de sign-out
    */
