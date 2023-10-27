@@ -16,9 +16,9 @@ function ProductDetail() {
                 <XMarkIcon className="h-6 w-6 text-black" />
             </div>
         </div>
-        <figure className='px-4'>
+        <figure className='px-4 content-image'>
             <img 
-                className='w-full h-full rounded-lg' 
+                className='w-full h-full rounded-lg image-detail' 
                 src={context.productToShow.images[0]} 
                 alt={context.productToShow.title}/>
         </figure>

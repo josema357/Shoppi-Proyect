@@ -7,11 +7,11 @@ function MyOrders() {
   const context=useContext(ShoppingContext);
 
   return (
-    <div>
+    <div className="w-full flex flex-col items-center">
       <p className="w-full text-center font-light text-lg mb-4">My orders</p>
       {
         context.orderCart.map((order, index)=>(
-          <Link key={index} to={`/my-orders/${index}`}>
+          <Link className="w-full max-w-xs" key={index} to={`/my-orders/${index}`}>
             <OrdersCard 
               totalPrice={order.totalPrice} 
               totalProducts={order.totalProducts}/>

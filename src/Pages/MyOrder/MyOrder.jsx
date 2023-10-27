@@ -9,14 +9,14 @@ function MyOrder() {
   const param = useParams();
   const indexOrder=Number(param.id);
   return (
-    <div>
-      <div className="flex items-center w-80 relative mb-4">
+    <div className="w-full max-w-sm px-1">
+      <div className="flex items-center  relative mb-4">
         <Link to='/my-orders' className="absolute left-0">
           <ChevronLeftIcon className="h-6 w-6 text-black cursor-pointer"/>
         </Link>
         <p className="w-full text-center font-light text-lg">My order</p>
       </div>
-      <div className='flex flex-col flex-grow'>
+      <div className='flex flex-col'>
             {
               isNaN(indexOrder)?
                 (

@@ -1,9 +1,12 @@
 import { createContext, useEffect, useState } from "react";
+import { initializeLocalStorage } from "../Utils/iniLocalStorage";
 
 export const ShoppingContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export const ShoppingProvider = ({children}) => {
+    //Inicializar LocalStorage
+    initializeLocalStorage();
     //Contador del carrito
     const [count, setCount] = useState(0);
     //Mostrar detalles
@@ -29,6 +32,12 @@ export const ShoppingProvider = ({children}) => {
     const [filteredItems, setFilteredItems] = useState(null);
     //Obtener productos por categoria
     const [searchByCategory, setSearchByCategory] = useState(null);
+    //Cuenta
+    const [account, setAccount]=useState({});
+    //Inicio de sesion
+    const [signOut, setSignOut]=useState(true);
+    //Mostrar mobile menu
+    const [menuMobile, setMenuMobile] = useState(false);
 
     useEffect(()=>{
         fetch('https://api.escuelajs.co/api/v1/products')
@@ -117,7 +126,13 @@ export const ShoppingProvider = ({children}) => {
                 setSearchByTitle,
                 filteredItems,
                 searchByCategory,
-                setSearchByCategory
+                setSearchByCategory,
+                account,
+                setAccount,
+                signOut,
+                setSignOut,
+                menuMobile,
+                setMenuMobile
             }}>
             {children}
         </ShoppingContext.Provider>
