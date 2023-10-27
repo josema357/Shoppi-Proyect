@@ -15,7 +15,7 @@ function Card(data) {
     event.stopPropagation();
     context.setCount(context.count + 1);
     context.setShoppingCart([...context.shoppingCart, productData]);
-    context.setCheckoutSideOpen(true);
+    //context.setCheckoutSideOpen(true);
     context.setDetailOpen(false);
   }
 

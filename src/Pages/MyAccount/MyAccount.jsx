@@ -48,7 +48,7 @@ function MyAccount() {
 
   return (
     <>
-      <h1 className="font-medium text-xl text-center mb-6 w-80">My Account</h1>
+      <h1 className="font-medium text-xl text-center mb-6 w-full">My Account</h1>
       {renderView()}
     </>
   )

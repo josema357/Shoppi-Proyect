@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const Login = ({parsedAccount, hasUserAnAccount, setView, handleSignIn}) => {
   return (
-    <div className="flex flex-col w-80">
-        <p>
+    <div className="flex flex-col w-full px-1 max-w-sm">
+        <p className="flex flex-col mb-3">
           <span className="font-light text-sm">Email: </span>
           <span>{parsedAccount?.email}</span>
         </p>
-        <p>
+        <p className="flex flex-col mb-3">
           <span className="font-light text-sm">Password: </span>
           <span>{parsedAccount?.password}</span>
         </p>

@@ -1,7 +1,7 @@
 
 const UserInfoEdit = ({form, parsedAccount, setView, editAccount}) => {
   return (
-    <form ref={form} className='flex flex-col gap-4 w-80'>
+    <form ref={form} className='flex flex-col gap-4 w-full max-w-sm px-1'>
         <div className='flex flex-col gap-1'>
           <label htmlFor="name" className='font-light text-sm'>Your name:</label>
           <input
@@ -10,7 +10,7 @@ const UserInfoEdit = ({form, parsedAccount, setView, editAccount}) => {
             name="name"
             defaultValue={parsedAccount.name}
             placeholder="Peter"
-            className='rounded-lg border border-black placeholder:font-light placeholder:text-sm placeholder:text-black/60 focus:outline-none py-2 px-4'
+            className='rounded-lg border border-black placeholder:font-light placeholder:text-sm placeholder:text-black/60 focus:outline-none p-2'
           />
         </div>
         <div className='flex flex-col gap-1'>
@@ -21,7 +21,7 @@ const UserInfoEdit = ({form, parsedAccount, setView, editAccount}) => {
             name="email"
             defaultValue={parsedAccount.email}
             placeholder="hi@helloworld.com"
-            className='rounded-lg border border-black placeholder:font-light placeholder:text-sm placeholder:text-black/60 focus:outline-none py-2 px-4'
+            className='rounded-lg border border-black placeholder:font-light placeholder:text-sm placeholder:text-black/60 focus:outline-none p-2'
           />
         </div>
         <div className='flex flex-col gap-1'>
@@ -32,7 +32,7 @@ const UserInfoEdit = ({form, parsedAccount, setView, editAccount}) => {
             name="password"
             defaultValue={parsedAccount.password}
             placeholder="******"
-            className='rounded-lg border border-black placeholder:font-light placeholder:text-sm placeholder:text-black/60 focus:outline-none py-2 px-4'
+            className='rounded-lg border border-black placeholder:font-light placeholder:text-sm placeholder:text-black/60 focus:outline-none p-2'
           />
         </div>
         <button

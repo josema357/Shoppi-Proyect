@@ -58,7 +58,7 @@ function CheckoutSideMenu() {
         <div className='px-6 py-4 flex-shrink-0'>
             <p className='flex justify-between items-center pb-3'>
                 <span className='font-medium'>Total:</span>
-                <span className='font-medium text-2xl'>${totalPrice(context.shoppingCart)}</span>
+                <span className='font-medium text-lg'>${totalPrice(context.shoppingCart)}</span>
             </p>
             <Link to='/my-orders/last'>
                 <button className='w-full bg-black py-3 text-white rounded-lg' onClick={()=> handleCheckout()}>Checkout</button>

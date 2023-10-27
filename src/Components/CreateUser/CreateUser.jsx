@@ -23,7 +23,7 @@ const CreateUser = ({parsedAccount, handleSignIn}) => {
         handleSignIn()
     }
   return (
-    <form ref={form} className="flex flex-col gap-4 w-80">
+    <form ref={form} className="flex flex-col gap-4 w-full px-1 max-w-sm">
       <div className="flex flex-col gap-1">
         <label htmlFor="name" className="font-light text-sm">
           Your name:
@@ -36,7 +36,7 @@ const CreateUser = ({parsedAccount, handleSignIn}) => {
           placeholder="Peter"
           required
           className="rounded-lg border border-black placeholder:font-light
-            placeholder:text-sm placeholder:text-black/60 focus:outline-none py-2 px-4"
+            placeholder:text-sm placeholder:text-black/60 focus:outline-none p-2"
         />
       </div>
       <div className="flex flex-col gap-1">
@@ -51,7 +51,7 @@ const CreateUser = ({parsedAccount, handleSignIn}) => {
           placeholder="hi@helloworld.com"
           required
           className="rounded-lg border border-black
-            placeholder:font-light placeholder:text-sm placeholder:text-black/60 focus:outline-none py-2 px-4"
+            placeholder:font-light placeholder:text-sm placeholder:text-black/60 focus:outline-none p-2"
         />
       </div>
       <div className="flex flex-col gap-1">
@@ -66,7 +66,7 @@ const CreateUser = ({parsedAccount, handleSignIn}) => {
           placeholder="******"
           required
           className="rounded-lg border border-black
-            placeholder:font-light placeholder:text-sm placeholder:text-black/60 focus:outline-none py-2 px-4"
+            placeholder:font-light placeholder:text-sm placeholder:text-black/60 focus:outline-none p-2"
         />
       </div>
       <Link to="/">

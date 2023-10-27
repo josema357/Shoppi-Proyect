@@ -36,6 +36,8 @@ export const ShoppingProvider = ({children}) => {
     const [account, setAccount]=useState({});
     //Inicio de sesion
     const [signOut, setSignOut]=useState(true);
+    //Mostrar mobile menu
+    const [menuMobile, setMenuMobile] = useState(false);
 
     useEffect(()=>{
         fetch('https://api.escuelajs.co/api/v1/products')
@@ -128,7 +130,9 @@ export const ShoppingProvider = ({children}) => {
                 account,
                 setAccount,
                 signOut,
-                setSignOut
+                setSignOut,
+                menuMobile,
+                setMenuMobile
             }}>
             {children}
         </ShoppingContext.Provider>

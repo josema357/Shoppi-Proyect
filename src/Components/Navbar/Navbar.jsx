@@ -37,7 +37,7 @@ function Navbar() {
     if (hasUserAnAccount && !isUserSignOut) {
       return (
         <>
-          <li className="text-blue-900">{parsedAccount.email}</li>
+          <li className="text-blue-900 max-[900px]:hidden">{parsedAccount.email}</li>
           <li>
             <NavLink
               to="/my-orders"
@@ -87,7 +87,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light top-0 bg-white border-b border-b-slate-200">
+    <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light top-0 bg-white border-b border-b-slate-200 max-[750px]:hidden">
       <ul className="flex items-center gap-3">
         <li className="font-semibold text-lg">
           <NavLink

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { Card } from "../../Components/Card/Card";
 import { ProductDetail } from "../../Components/ProductDeatil/ProductDetail";
 import { ShoppingContext } from "../../Context/Context";
@@ -6,12 +6,19 @@ import { useParams } from "react-router-dom";
 
 function Home() {
   const context=useContext(ShoppingContext);
+  const asideRef=useRef(null);
   /**
    * Ocultar detalles al dar click en el input
    */
   const handleDetail=()=>{
     context.setDetailOpen(false);
   }
+  /**
+   * Esta funcion oculta el menu mobile
+   */
+  const closeMobileMenu = () => {
+    context.setMenuMobile(false);
+  };
 
   let {category} = useParams();
   useEffect(()=>{
@@ -21,6 +28,21 @@ function Home() {
     }
   },[category, context]);
 
+  useEffect(() => {
+    function clickOutside(event) {
+      if (asideRef.current && asideRef.current.contains(event.target)) {
+            closeMobileMenu();
+      }
+    }
+    // Agregar un event listener para detectar clics en el home
+    document.addEventListener('click', clickOutside);
+
+    return () => {
+      // Remover el event listener cuando el componente se desmonta
+      document.removeEventListener('click', clickOutside);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   /**
    * Renderiza los items filtrados por titulo o por categoria
    * @returns 
@@ -41,7 +63,7 @@ function Home() {
 
 
   return (
-    <div>
+    <div ref={asideRef}>
       <p className="w-full text-center pb-4 font-light text-lg">Home</p>
       <div className="w-full flex justify-center mb-6">
         <input 
